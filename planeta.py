@@ -55,10 +55,10 @@ class Planeta(object):
         '''
         Similar a avanza_euler, pero usando Runge-Kutta 4.
         '''
-        I=self.ecuacion_de_movimiento
+        Ecuacion=self.ecuacion_de_movimiento
         T=[self.t_actual,dt+self.t_actual]
-        S=integrate.odeint(I, self.y_actual, T)
-        self.y_actual=S[1]
+        Ecuacion_integrada=integrate.odeint(Ecuacion, self.y_actual, T)
+        self.y_actual=Ecuacion_integrada[1]
         self.t_actual=T[1]
         print self.y_actual
         print self.t_actual
@@ -74,4 +74,8 @@ class Planeta(object):
         '''
         Calcula la enérgía total del sistema en las condiciones actuales.
         '''
+        G=6.674e-11 
+        M=19891e+17
+        m=1/(G*M)
+        self.energia_actual=-G*M*m/(((self.y_actual(0)**2)+(self.y_actual(1)**2))**(1./2.))
         pass
