@@ -59,8 +59,6 @@ class Planeta(object):
         Ecuacion_integrada=integrate.odeint(Ecuacion, self.y_actual, T)
         self.y_actual=Ecuacion_integrada[1]
         self.t_actual=T[1]
-        print self.y_actual
-        print self.t_actual
         pass
 
     def avanza_verlet(self, dt):

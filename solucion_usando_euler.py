@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 condicion_inicial = [10, 0, 0, 2]
 
 p = Planeta(condicion_inicial)
-dt=np.linspace(0,100,101)
+dt=np.linspace(0,10000,10001)
 Energias=[]
 X=[]
 Y=[]
