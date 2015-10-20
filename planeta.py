@@ -8,9 +8,7 @@ Created on Tue Oct 20 18:36:30 2015
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from scipy.integrate import ode
 import scipy.integrate as integrate 
-import numpy as np
 
 class Planeta(object):
     '''
@@ -36,10 +34,8 @@ class Planeta(object):
         Implementa la ecuación de movimiento, como sistema de ecuaciónes de
         primer orden.
         '''
-        #G=6.674e-11 
-        #M=19891e+17
-        G=1
-        M=1
+        G=6.674e-11 
+        M=19891e+17
         x, y, vx, vy = self.y_actual
         dvxdt=G*M*x/(((x**2)+(y**2))**(3./2.))
         dvydt=G*M*y/(((x**2)+(y**2))**(3./2.))
@@ -77,11 +73,8 @@ class Planeta(object):
         '''
         Calcula la enérgía total del sistema en las condiciones actuales.
         '''
-        #G=6.674e-11 
-        #M=19891e+17
-        #m=1/(G*M)
-        G=1
-        M=1
-        m=1
+        G=6.674e-11 
+        M=19891e+17
+        m=1/(G*M)
         self.energia_actual=-G*M*m/(((self.y_actual(0)**2)+(self.y_actual(1)**2))**(1./2.))
         pass
